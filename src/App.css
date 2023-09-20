@@ -20,6 +20,15 @@
   width: 80%;
 }
 
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+.logo {
+  width: 30px;
+  height: 30px;
+}
 .input {
   width: 100%;
   font-size: 1rem;

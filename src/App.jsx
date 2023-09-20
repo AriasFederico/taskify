@@ -3,13 +3,12 @@ import './App.css'
 import { AgregarTarea } from './modules/Input.jsx'
 import { Item } from './modules/Item.jsx';
 import { Tema } from './modules/Tema.jsx';
+import logo from './logo/logo-taskify.png'
+import logoOscuro from './logo/logo-taskify-oscuro.png'
 
 function App() {
-  
   // crear variable que tenga la condicion, a esa variable la paso a los componentes incluyendo al App
   // a la variable pasarla como prop a los componentes
-
-  const logo = <img src="./logo/logo-claro.png" alt="Mi Imagen" />;
 
   let valorCondicion = null;
 
@@ -38,7 +37,10 @@ function App() {
   return (
     <div className={`App ${theme ? 'app-oscuro-theme' : ''}`}>
       <div className={`usuario-tema`}>
-        Notas de: ----
+        <div className="logo-titulo">
+          <img src={logo} alt="" className='logo' />
+          <h3>Taskify</h3>
+        </div>
         <Tema click={click} estadoTema={theme} icono={icono}/>
       </div>
       <div className={`contenedor-lista`}>
