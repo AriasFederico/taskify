@@ -10,6 +10,8 @@ function App() {
   // crear variable que tenga la condicion, a esa variable la paso a los componentes incluyendo al App
   // a la variable pasarla como prop a los componentes
 
+  const [ logoUrl, setLogo] = useState(logo);
+
   let valorCondicion = null;
 
   const [ theme, setTheme] = useState(valorCondicion);
@@ -27,6 +29,7 @@ function App() {
     // funcion que al hacer click haga...
     setTheme(theme === 1 ? null : 1);
     setIcono(icono === '🔘' ? '⚫' : '🔘') 
+    setLogo(logoUrl === logo ? logoOscuro : logo)
   }
 
   const sol = '🔘';
@@ -38,7 +41,7 @@ function App() {
     <div className={`App ${theme ? 'app-oscuro-theme' : ''}`}>
       <div className={`usuario-tema`}>
         <div className="logo-titulo">
-          <img src={logo} alt="" className='logo' />
+          <img src={logoUrl} alt="" className='logo' />
           <h3>Taskify</h3>
         </div>
         <Tema click={click} estadoTema={theme} icono={icono}/>
