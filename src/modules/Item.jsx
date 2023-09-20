@@ -1,4 +1,5 @@
 export const Item = ( { tarea, estadoTema } ) => {
+  
   return (
     <>
       <div className={`tarea ${estadoTema ? 'tarea-tema-oscuro' : ''}`} draggable={true}>
