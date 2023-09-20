@@ -42,7 +42,7 @@ function App() {
       <div className={`usuario-tema`}>
         <div className="logo-titulo">
           <img src={logoUrl} alt="" className='logo' />
-          <h3>Taskify</h3>
+          <h3 className={`titulo ${theme ? 'titulo-oscuro' : ''}`}>Taskify</h3>
         </div>
         <Tema click={click} estadoTema={theme} icono={icono}/>
       </div>

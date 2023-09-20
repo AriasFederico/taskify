@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
 
+:root {
+  --color-white: rgba(216, 216, 216, 0.89);
+  --color-white-p: rgba(255, 255, 255, 0.877);
+
+  --color-base-black: rgba(54, 54, 54, 0.959);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -34,6 +34,11 @@
 .logo-titulo h3 {
   padding-top: .2rem;
 }
+
+.sol {
+  user-select: none;
+}
+
 .input {
   width: 100%;
   font-size: 1rem;
@@ -62,20 +67,20 @@
   justify-content: flex-start;
   padding: .1rem .1rem .2rem .1rem;
   border-radius: 10px;
-  border: 1px solid rgba(216, 216, 216, 0.733);
+  border: 1px solid var(--color-white);
   transition: all .5s;
 }
 
 /* ------------------------------------- */
 
 .app-oscuro-theme {
-  background-color: rgba(54, 54, 54, 0.918);
+  background-color: var(--color-base-black);
   transition: all .5s;
 }
 
 .contenedor-tema-oscuro {
   justify-content: flex-end;
-  border: 1px solid rgba(216, 216, 216, 0.733);
+  border: 1px solid var(--color-white);
   transition: all .5s;
 }
 
@@ -84,9 +89,13 @@
   transition: all .5s;
 }
 
+.titulo-oscuro {
+  color: var(--color-white);
+}
+
 .input-oscuro-theme {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.877);
+  color: var(--color-white-p);
   transition: all .5s;
 }
 
@@ -97,15 +106,16 @@
 }
 
 .tarea {
-  color: rgb(36, 32, 32);
+  color: var(--color-base-black);
   min-width: 100%;
   word-wrap: break-word;
   display: flex;
   justify-content: space-between;
   transition: all .5s;
   padding: 1rem;
-  border-radius: 15px 15px 15px 0;
-  border: 1px solid rgba(216, 216, 216, 0.733);
+  /* border-radius: 15px 15px 15px 0; */
+  border-radius: 4px;
+  border: 1px solid var(--color-white);
   min-height: 4.5rem;
   font-weight: 700;
 }
@@ -115,6 +125,6 @@
 }
 
 .tarea-tema-oscuro {
-  background-color: rgba(255, 255, 255, 0.507);
+  background-color: var(--color-white);
   border: 1px solid transparent;
 }
