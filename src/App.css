@@ -25,9 +25,14 @@
   align-items: center;
   gap: .3rem;
 }
+
 .logo {
   width: 30px;
   height: 30px;
+}
+
+.logo-titulo h3 {
+  padding-top: .2rem;
 }
 .input {
   width: 100%;
