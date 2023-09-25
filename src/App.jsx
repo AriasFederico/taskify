@@ -1,60 +1,55 @@
 import { useState } from 'react'
 import './App.css'
-import { AgregarTarea } from './modules/Input.jsx'
-import { Item } from './modules/Item.jsx';
-import { Tema } from './modules/Tema.jsx';
-import logo from './logo/logo-taskify.png'
-import logoOscuro from './logo/logo-taskify-oscuro.png'
+
+// componentes
+import { InputTarea } from './modules/Input'
+import { Item } from './modules/Item'
 
 function App() {
-  // crear variable que tenga la condicion, a esa variable la paso a los componentes incluyendo al App
-  // a la variable pasarla como prop a los componentes
+  const convertirValor = (string) => {
 
-  const [ logoUrl, setLogo] = useState(logo);
-
-  let valorCondicion = null;
-
-  const [ theme, setTheme] = useState(valorCondicion);
-
-  let tareas = [];
-  const [ array, setArray ] = useState(tareas);
-
-  const onAgregarTarea = (val) => {
-    if(val < 1) return
-    setArray([...array, val]);
-    console.log(array)
+    const notaObj = {
+      nota: string.charAt().toUpperCase() +string.slice(1),
+      terminado:false,
+    }
+    setArrayNotas([...arrayNotas, notaObj])
+    console.log(notaObj)
+    console.log(arrayNotas)
   }
 
-  const click = () => {
-    // funcion que al hacer click haga...
-    setTheme(theme === 1 ? null : 1);
-    setIcono(icono === '🔘' ? '⚫' : '🔘') 
-    setLogo(logoUrl === logo ? logoOscuro : logo)
+  const notas = [];
+
+  const [ arrayNotas, setArrayNotas ] = useState(notas);
+
+  const onClick = (index) => {
+    // Clonar el array de notas y actualizar el estado 'terminado' de la tarea seleccionada
+    const updatedArrayNotas = arrayNotas.map((nota, i) => {
+      if (i === index) {
+        return { ...nota, terminado: !nota.terminado };
+      } else {
+        return nota;
+      }
+    });
+
+    setArrayNotas(updatedArrayNotas);
   }
-
-  const sol = '🔘';
-  const luna = '⚫';
-
-  const [ icono, setIcono ] = useState(luna)
 
   return (
-    <div className={`App ${theme ? 'app-oscuro-theme' : ''}`}>
-      <div className={`usuario-tema`}>
-        <div className="logo-titulo">
-          <img src={logoUrl} alt="" className='logo' />
-          <h3 className={`titulo ${theme ? 'titulo-oscuro' : ''}`}>Taskify</h3>
-        </div>
-        <Tema click={click} estadoTema={theme} icono={icono}/>
-      </div>
-      <div className={`contenedor-lista`}>
+    <div className='App'>
+      <div className="contenedor-lista">
+        <InputTarea convertirValor={convertirValor}/>
 
-        <AgregarTarea agregarTarea={onAgregarTarea} estadoTema={theme}/>
-
-        <div className={`tjt`}>
-          {array.map((item, index) => (
-              <Item key={index} tarea={item} estadoTema={theme}/>
-            ))}
-          {/* item de boton */}
+        <div className="bloque-tarea">
+          {
+            arrayNotas.map( (nota, index) => 
+            <Item 
+            key={index}
+            valorNota={nota.nota}
+            estadoNota={nota.terminado}
+            funcionTick={onClick}
+            index={index}
+            />)
+          }
         </div>
       </div>
     </div>

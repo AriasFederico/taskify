@@ -2,41 +2,13 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 2rem;
   flex-direction: column;
-  transition: all .5s;
-  background-color: transparent;
-  padding: 2rem 0 4rem;
-}
-
-.usuario-tema {
-  width: 90%;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
+  padding-top: 3rem;
+  margin-bottom: 5rem;
 }
 
 .contenedor-lista {
   width: 80%;
-}
-
-.logo-titulo {
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-}
-
-.logo {
-  width: 30px;
-  height: 30px;
-}
-
-.logo-titulo h3 {
-  padding-top: .2rem;
-}
-
-.sol {
-  user-select: none;
 }
 
 .input {
@@ -44,7 +16,7 @@
   font-size: 1rem;
   outline: none;
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--color-base-black);
   padding: .5rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -55,65 +27,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .4rem;
-}
-
-.contenedor-sol-luna {
-  cursor: pointer;
-  width: 50px;
-  font-size: .7rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: .1rem .1rem .2rem .1rem;
-  border-radius: 10px;
-  border: 1px solid var(--color-white);
-  transition: all .5s;
+  gap: .5rem;
 }
 
 /* ------------------------------------- */
 
-.app-oscuro-theme {
-  background-color: var(--color-base-black);
-  transition: all .5s;
-}
-
-.contenedor-tema-oscuro {
-  justify-content: flex-end;
-  border: 1px solid var(--color-white);
-  transition: all .5s;
-}
-
-.luna {
-  color: white;
-  transition: all .5s;
-}
-
-.titulo-oscuro {
-  color: var(--color-white);
-}
-
-.input-oscuro-theme {
-  background-color: transparent;
-  color: var(--color-white-p);
-  transition: all .5s;
-}
-
-.tjt {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
 .tarea {
   color: var(--color-base-black);
-  min-width: 100%;
+  width: 100%;
   word-wrap: break-word;
   display: flex;
   justify-content: space-between;
   transition: all .5s;
   padding: 1rem;
-  /* border-radius: 15px 15px 15px 0; */
   border-radius: 4px;
   border: 1px solid var(--color-white);
   min-height: 4.5rem;
@@ -123,10 +49,33 @@
 
 .tarea p {
   width: 80%;
+  user-select: none;
 }
 
-.tarea-tema-oscuro {
+/* .tarea-tema-oscuro {
   background-color: var(--color-white);
   border: 1px solid transparent;
   box-shadow: 0 2px 4px rgba(238, 238, 238, 0.288);
+} */
+
+.nota {
+  background-color: white;
+  transition: all .5s;
+}
+
+.terminado {
+  background-color: rgba(101, 156, 63, 0.493);
+  transition: all .5s;
+}
+
+.terminado p {
+  text-decoration: line-through;
+}
+
+.estado {
+  cursor: pointer;
+}
+
+.estado p {
+  user-select: none;
 }
