@@ -16,6 +16,20 @@
   justify-content: space-between;
 }
 
+.contenedor-logo-titulo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background:url(./logo/logo-taskify.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+}
+
 .contenedor-tema {
   border: 2px solid var(--color-white);
   border-radius: 50px;
@@ -100,14 +114,6 @@
 
 .terminado p {
   text-decoration: line-through;
-}
-
-.estado:hover {
-  color: rgb(51, 182, 84);
-}
-
-.eliminar-nota:hover {
-  color:rgb(202, 71, 71);
 }
 
 .estado,

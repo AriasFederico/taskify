@@ -14,9 +14,9 @@ function App() {
 
   const [ tema, setTema ] = useState(temas.oscuro)
 
-  // const cambiarTema = () => {
-
-  // }
+  const cambiarTema = () => {
+    console.log('anda')
+  }
 
   const convertirValor = (string) => {
     const notaObj = {
@@ -41,7 +41,7 @@ function App() {
     // Clonar el array de notas y actualizar el estado 'terminado' de la tarea seleccionada
     const updatedArrayNotas = arrayNotas.map((nota, i) => {
       if (i === index) {
-        return { ...nota, terminado: !nota.terminado };
+        return { ...nota, terminado: !nota.terminado};
       } else {
         return nota;
       }
@@ -52,11 +52,12 @@ function App() {
   return (
     <div className='App'>
       <header className='header'>
-        <div>
+        <div className='contenedor-logo-titulo'>
           <div className="logo"></div>
           <h1>Taskify</h1>
         </div>
-        <div className='contenedor-tema'>
+        <div className='contenedor-tema'
+        onClick={cambiarTema}>
           <p>{tema}</p>
         </div>
       </header>
@@ -71,6 +72,7 @@ function App() {
             key={index}
             valorNota={nota.nota}
             estadoNota={nota.terminado}
+            Eliminado={nota.eliminado}
             funcionTick={onClick}
             eliminarNota={eliminarNota}
             index={index}
