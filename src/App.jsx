@@ -18,7 +18,6 @@ function App() {
 
   // }
 
-
   const convertirValor = (string) => {
     const notaObj = {
       nota: string.charAt().toUpperCase() +string.slice(1),
@@ -52,7 +51,7 @@ function App() {
 
   return (
     <div className='App'>
-      <header>
+      <header className='header'>
         <div>
           <div className="logo"></div>
           <h1>Taskify</h1>
