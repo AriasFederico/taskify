@@ -63,9 +63,16 @@
   transition: all .5s;
 }
 
+.estadoNota {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
 .terminado {
-  background-color: rgba(101, 156, 63, 0.493);
+  background-color: var(--color-tarea-terminada);
   transition: all .5s;
+  user-select: none;
 }
 
 .terminado p {
@@ -74,8 +81,5 @@
 
 .estado {
   cursor: pointer;
-}
-
-.estado p {
   user-select: none;
 }

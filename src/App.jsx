@@ -21,6 +21,11 @@ function App() {
 
   const [ arrayNotas, setArrayNotas ] = useState(notas);
 
+  const eliminarNota = (index) => {
+    const updatedArrayNotas = arrayNotas.filter((_, i) => i !== index);
+    setArrayNotas(updatedArrayNotas);
+  }
+
   const onClick = (index) => {
     // Clonar el array de notas y actualizar el estado 'terminado' de la tarea seleccionada
     const updatedArrayNotas = arrayNotas.map((nota, i) => {
@@ -30,8 +35,7 @@ function App() {
         return nota;
       }
     });
-
-    setArrayNotas(updatedArrayNotas);
+    setArrayNotas(updatedArrayNotas)
   }
 
   return (
@@ -47,6 +51,8 @@ function App() {
             valorNota={nota.nota}
             estadoNota={nota.terminado}
             funcionTick={onClick}
+            // eslint-disable-next-line no-undef
+            eliminarNota={eliminarNota}
             index={index}
             />)
           }
