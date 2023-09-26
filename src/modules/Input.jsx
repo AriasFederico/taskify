@@ -10,6 +10,7 @@ export const InputTarea = ( { convertirValor } ) => {
 
   const onSubmit = ( event ) => {
     event.preventDefault()
+    if (inputValue < 1) return
     convertirValor(inputValue);
     setInputValue('')
   }

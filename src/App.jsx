@@ -6,8 +6,20 @@ import { InputTarea } from './modules/Input'
 import { Item } from './modules/Item'
 
 function App() {
-  const convertirValor = (string) => {
 
+  const temas = {
+    claro: '🔘',
+    oscuro: '⚫'
+  }
+
+  const [ tema, setTema ] = useState(temas.oscuro)
+
+  // const cambiarTema = () => {
+
+  // }
+
+
+  const convertirValor = (string) => {
     const notaObj = {
       nota: string.charAt().toUpperCase() +string.slice(1),
       terminado:false,
@@ -40,6 +52,16 @@ function App() {
 
   return (
     <div className='App'>
+      <header>
+        <div>
+          <div className="logo"></div>
+          <h1>Taskify</h1>
+        </div>
+        <div className='contenedor-tema'>
+          <p>{tema}</p>
+        </div>
+      </header>
+
       <div className="contenedor-lista">
         <InputTarea convertirValor={convertirValor}/>
 
@@ -51,7 +73,6 @@ function App() {
             valorNota={nota.nota}
             estadoNota={nota.terminado}
             funcionTick={onClick}
-            // eslint-disable-next-line no-undef
             eliminarNota={eliminarNota}
             index={index}
             />)
