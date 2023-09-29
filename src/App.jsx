@@ -5,6 +5,8 @@ import './App.css'
 import { InputTarea } from './modules/Input'
 import { Item } from './modules/Item'
 
+// imagenes
+
 function App() {
 
   const temas = {
