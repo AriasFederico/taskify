@@ -30,6 +30,15 @@
   background-size: 75%;
 }
 
+.logo-tema-oscuro {
+    width: 40px;
+    height: 40px;
+    background:url(./logo/logo-taskify-oscuro.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+
 .contenedor-tema {
   border: 2px solid var(--color-white);
   border-radius: 50px;
@@ -120,5 +129,5 @@
 .eliminar-nota {
   cursor: pointer;
   user-select: none;
-  padding: .3rem;
+  padding: .2rem;
 }

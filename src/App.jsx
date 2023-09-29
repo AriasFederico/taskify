@@ -15,8 +15,7 @@ function App() {
   const [ tema, setTema ] = useState(temas.oscuro)
 
   const cambiarTema = () => {
-    console.log('anda')
-  }
+    setTema((temaActual) => (temaActual === temas.oscuro ? temas.claro : temas.oscuro))  }
 
   const convertirValor = (string) => {
     const notaObj = {
