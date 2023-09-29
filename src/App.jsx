@@ -15,7 +15,9 @@ function App() {
   const [ tema, setTema ] = useState(temas.oscuro)
 
   const cambiarTema = () => {
-    setTema((temaActual) => (temaActual === temas.oscuro ? temas.claro : temas.oscuro))  }
+    setTema((temaActual) => (temaActual === temas.oscuro ? temas.claro : temas.oscuro)) 
+    // if tema === oscuro -> setear un classname
+  }
 
   const convertirValor = (string) => {
     const notaObj = {
@@ -49,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className={`App ${tema === '🔘' ? 'app-oscuro' : ''}`} >
       <header className='header'>
         <div className='contenedor-logo-titulo'>
           <div className="logo"></div>
@@ -64,7 +66,7 @@ function App() {
       <div className="contenedor-lista">
         <InputTarea convertirValor={convertirValor}/>
 
-        <div className="bloque-tarea">
+        <div className='bloque-tarea'>
           {
             arrayNotas.map( (nota, index) => 
             <Item 
@@ -75,7 +77,8 @@ function App() {
             funcionTick={onClick}
             eliminarNota={eliminarNota}
             index={index}
-            />)
+            tema={tema}
+             />)
           }
         </div>
       </div>

@@ -14,3 +14,4 @@ export const Item = ( { valorNota, estadoNota, funcionTick, index, eliminarNota 
     </div>
   )
 }
+
