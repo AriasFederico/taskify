@@ -81,8 +81,9 @@
   padding: 1rem;
   border-radius: 3px;
   border: 1px solid var(--color-white);
-  min-height: 4.5rem;
+  height: 10rem;
   font-weight: 700;
+  overflow: auto;
 }
 
 .tarea p {
@@ -154,4 +155,30 @@
 .input-oscuro {
   border-color: var(--color-white);
   color: var(--color-white);
+}
+
+/* media queries */
+
+
+@media screen and (min-width:660px) {
+  .tarea,
+  .nota-oscuro {
+  }
+
+  form {
+    width: 50%;
+    margin: auto;
+  }
+
+  .tarea {
+    width: 30%;
+  }
+
+  .bloque-tarea {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  
 }
