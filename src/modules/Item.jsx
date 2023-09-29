@@ -1,7 +1,7 @@
-export const Item = ( { valorNota, estadoNota, funcionTick, index, eliminarNota }) => {
+export const Item = ( { valorNota, estadoNota, funcionTick, index, eliminarNota, estadoTema }) => {
 
   return (
-    <div className={`tarea ${estadoNota ? 'terminado' : 'nota'}`}>
+    <div className={`tarea ${estadoNota ? 'terminado' : 'nota'} ${estadoTema === '🔘' ? 'tarea-oscuro' : ''}`}>
       <p>{valorNota}</p>
 
       <div className="estadoNota">

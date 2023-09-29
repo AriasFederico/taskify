@@ -31,15 +31,6 @@
   background-size: 75%;
 }
 
-.logo-tema-oscuro {
-    width: 40px;
-    height: 40px;
-    background:url(./logo/logo-taskify-oscuro.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 75%;
-}
-
 .contenedor-tema {
   border: 1px solid var(--color-white);
   border-radius: 50px;
@@ -52,7 +43,6 @@
   font-size: .6rem;
   cursor: pointer;
 }
-
 
 .contenedor-lista {
   width: 80%;
@@ -88,11 +78,10 @@
   justify-content: space-between;
   transition: all .5s;
   padding: 1rem;
-  border-radius: 4px;
-  /* border: 1px solid var(--color-white); */
+  border-radius: 3px;
+  border: 1px solid var(--color-white);
   min-height: 4.5rem;
   font-weight: 700;
-  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.26);
 }
 
 .tarea p {
@@ -134,4 +123,24 @@
   background-color: var(--color-base-black);
   color: var(--color-white);
   border-color: none;
+}
+
+.logo-oscuro {
+  width: 40px;
+  height: 40px;
+  background:url(./logo/logo-taskify-oscuro.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+}
+
+.tarea-oscuro {
+  background-color: rgba(255, 255, 255, 0.719);
+}
+
+.tarea-oscuro.terminado {
+  background-color: rgba(102, 172, 102, 0.815);
+  transition: all .5s;
+  user-select: none;
+  border-color: transparent;
 }

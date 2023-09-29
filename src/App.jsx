@@ -54,7 +54,7 @@ function App() {
     <div className={`App ${tema === '🔘' ? 'app-oscuro' : ''}`} >
       <header className='header'>
         <div className='contenedor-logo-titulo'>
-          <div className="logo"></div>
+          <div className={`logo ${tema === '🔘' ? 'logo-oscuro' : ''}`}></div>
           <h1>Taskify</h1>
         </div>
         <div className='contenedor-tema'
@@ -73,11 +73,11 @@ function App() {
             key={index}
             valorNota={nota.nota}
             estadoNota={nota.terminado}
-            Eliminado={nota.eliminado}
+            eliminado={nota.eliminado}
             funcionTick={onClick}
             eliminarNota={eliminarNota}
             index={index}
-            tema={tema}
+            estadoTema={tema}
              />)
           }
         </div>
