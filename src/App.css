@@ -35,11 +35,14 @@
   border-bottom: 1px solid var(--color-white);
   width: 2.5rem;
   padding: .3rem 0;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
 .contenedor-tema p {
-  font-size: .6rem;
-  cursor: pointer;
+  font-size: .8rem;
+  line-height: .9;
 }
 
 .contenedor-lista {
@@ -130,6 +133,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 75%;
+  transition: all .5s;
 }
 
 .tarea-oscuro {
@@ -137,8 +141,17 @@
 }
 
 .tarea-oscuro.terminado {
-  background-color: var(--color-tarea-terminada);
+  background-color: var(--color-terminado-oscuro);
   transition: all .5s;
   user-select: none;
   border-color: transparent;
+}
+
+.contenedor-tema-oscuro {
+  justify-content: flex-end;
+}
+
+.input-oscuro {
+  border-color: var(--color-white);
+  color: var(--color-white);
 }

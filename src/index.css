@@ -6,6 +6,8 @@
 
   --color-base-black: rgba(54, 54, 54, 0.959);
   --color-tarea-terminada: rgba(101, 156, 63, 0.493);
+
+  --color-terminado-oscuro: rgba(164, 226, 122, 0.651);
 }
 
 * {

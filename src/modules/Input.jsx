@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const InputTarea = ( { convertirValor } ) => {
+export const InputTarea = ( { convertirValor, estadoTema } ) => {
 
   const [inputValue, setInputValue] = useState('');
 
@@ -20,8 +20,8 @@ export const InputTarea = ( { convertirValor } ) => {
       <input type="text"
       value={inputValue}
       onChange={onInputChange}
-      className="input"
       placeholder="Ingresar tarea"
+      className={`input ${estadoTema === '🔘' ? 'input-oscuro' : ''}`}
       />
     </form>
   )

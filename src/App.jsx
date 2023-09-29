@@ -31,9 +31,7 @@ function App() {
     console.log(arrayNotas)
   }
 
-  const notas = [];
-
-  const [ arrayNotas, setArrayNotas ] = useState(notas);
+  const [ arrayNotas, setArrayNotas ] = useState([]);
 
   const eliminarNota = (index) => {
     const updatedArrayNotas = arrayNotas.filter((_, i) => i !== index);
@@ -59,14 +57,14 @@ function App() {
           <div className={`logo ${tema === '🔘' ? 'logo-oscuro' : ''}`}></div>
           <h1>Taskify</h1>
         </div>
-        <div className='contenedor-tema'
+        <div className={`contenedor-tema ${tema === '🔘' ? 'contenedor-tema-oscuro' : ''}`}
         onClick={cambiarTema}>
           <p>{tema}</p>
         </div>
       </header>
 
       <div className="contenedor-lista">
-        <InputTarea convertirValor={convertirValor}/>
+        <InputTarea convertirValor={convertirValor} estadoTema={tema}/>
 
         <div className='bloque-tarea'>
           {
