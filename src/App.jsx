@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 
 // componentes
@@ -31,7 +32,10 @@ function App() {
     console.log(arrayNotas)
   }
 
-  const [ arrayNotas, setArrayNotas ] = useState([]);
+  const [arrayNotas, setArrayNotas] = useState(() => {
+    const storedNotes = localStorage.getItem('notas');
+    return storedNotes ? JSON.parse(storedNotes) : [];
+  });
 
   const eliminarNota = (index) => {
     const updatedArrayNotas = arrayNotas.filter((_, i) => i !== index);
@@ -49,6 +53,11 @@ function App() {
     });
     setArrayNotas(updatedArrayNotas)
   }
+
+  useEffect(() => {
+    // Guarda el estado actual del arrayNotas en el local storage cuando cambie.
+    localStorage.setItem('notas', JSON.stringify(arrayNotas));
+  }, [arrayNotas]);
 
   return (
     <div className={`App ${tema === '🔘' ? 'app-oscuro' : ''}`} >
