@@ -15,12 +15,20 @@ function App() {
     oscuro: '⚫'
   }
 
-  const [ tema, setTema ] = useState(temas.oscuro)
+  const [tema, setTema] = useState(() => {
+    const storedTema = localStorage.getItem('tema');
+    return storedTema ? storedTema : temas.oscuro;
+  });
 
   const cambiarTema = () => {
     setTema((temaActual) => (temaActual === temas.oscuro ? temas.claro : temas.oscuro)) 
     // if tema === oscuro -> setear un classname
   }
+
+  useEffect(() => {
+    // Guarda el estado actual del tema en el local storage cuando cambie.
+    localStorage.setItem('tema', tema);
+  }, [tema]);
 
   const convertirValor = (string) => {
     const notaObj = {
